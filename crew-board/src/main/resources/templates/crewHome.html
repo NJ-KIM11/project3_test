@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CrewHome</title>
+</head>
+<body>
+
+    <style>
+        #crewboard{
+            width: 700px;
+            height: 200px;
+            border: black solid 1px;
+        }
+    </style>
+
+    <table id="crewboard">
+        <tr>
+            <th>게시글 번호</th>
+            <th>크루 멤버</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>제목</th>
+            <th>내용</th>
+        </tr>
+        <tr th:each="post : ${postList}">
+            <td th:text="${post.postNo}"></td>
+            <td th:text="${post.crewNo}"></td>
+            <td th:text="${post.userNo}"></td>
+            <td th:text="${post.postDate}"></td>
+            <td th:text="${post.postTitle}"></td>
+            <td th:text="${post.postContent}"></td>
+            <td th:text="${post.postStatus}"></td>
+
+        </tr>
+
+    </table>
+
+<button id="writePost">게시글 작성</button>
+
+    <script>
+        document.getElementById("writePost").addEventListener("click", function (){
+            location.href = "/writepost"
+        })
+    </script>
+
+</body>
+</html>

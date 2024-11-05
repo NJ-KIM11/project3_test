@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.crewboard.model.CrewBoardDAO">
+
+    <resultMap id="postResult" type="com.ohgiraffers.crewboard.dto.CrewBoardDTO">
+        <id property="postNo" column="POST_NO"/>
+        <result property="crewNo" column="CREW_NO"/>
+        <result property="userNo" column="USER_NO"/>
+        <result property="postDate" column="POST_DATE"/>
+        <result property="postTitle" column="POST_TITLE"/>
+        <result property="postContent" column="POST_CONTENT"/>
+        <result property="postStatus" column="POST_STATUS"/>
+    </resultMap>
+
+    <select id="selectAllPosts" resultMap="postResult">
+        SELECT * FROM CREW_BOARD
+        WHERE POST_STATUS = 'Y'
+    </select>
+
+</mapper>
