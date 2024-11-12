@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.3.1/ckeditor5.css" />-->
+</head>
+<body>
+
+    <style>
+        #crewboard{
+            width: 700px;
+            height: 200px;
+            border: black solid 1px;
+        }
+
+        .text-tiny {
+            font-size: 0.7em;
+        }
+
+        .text-small {
+            font-size: 0.85em;
+        }
+
+        .text-big {
+            font-size: 1.4em;
+        }
+
+        .text-huge {
+            font-size: 1.8em;
+        }
+    </style>
+
+    <table id="crewboard">
+        <tr>
+
+            <th>내용</th>
+        </tr>
+
+        <tr>
+            <td th:text="${content}"></td>
+
+            <td th:utext="${content}"></td>
+
+
+        </tr>
+
+    </table>
+
+</body>
+</html>
